@@ -77,8 +77,7 @@ def read_one_bulletin(session: Session, url: str) -> str:
 
 
 def parse_job_postings(text: str) -> Set[str]:
-    pos = text.find("Job Posting")
-    postings = text[pos:].split("\n")[1:]
+    postings = text.split("\n")[1:]
     companies = set()
     for j in postings:
         try:
