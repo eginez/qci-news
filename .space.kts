@@ -1,9 +1,10 @@
 job("Example shell script") {
-    container(displayName = "Say Hello", image = "ubuntu") {
+    container(displayName = "Say Hello", image = "python") {
         shellScript {
             content = """
                ls -larth
-                echo World!
+               cd src
+               python parse.py
             """
         }
     }
